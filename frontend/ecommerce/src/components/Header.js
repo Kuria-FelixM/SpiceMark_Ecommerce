@@ -1,48 +1,48 @@
 import React from "react";
 import { LinkContainer } from "react-router-bootstrap";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container, Form, Button } from "react-bootstrap";
+
 function Header() {
   return (
-    <nav className="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-  <div className="container-fluid">
-    <a className="navbar-brand" href="#">Spice Mark Fashions</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarColor01">
-      <ul className="navbar-nav me-auto">
-        <li className="nav-item">
-          <a className="nav-link active" href="#">Home
-            <span className="visually-hidden">(current)</span>
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Features</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Pricing</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">About</a>
-        </li>
-        <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div className="dropdown-menu">
-            <a className="dropdown-item" href="#">Action</a>
-            <a className="dropdown-item" href="#">Another action</a>
-            <a className="dropdown-item" href="#">Something else here</a>
-            <div className="dropdown-divider"></div>
-            <a className="dropdown-item" href="#">Separated link</a>
-          </div>
-        </li>
-      </ul>
-      <form className="d-flex">
-        <input className="form-control me-sm-2" type="search" placeholder="Search" />
-        <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
+    <Navbar expand="lg" bg="primary" variant="dark">
+      <Container fluid>
+        <LinkContainer to="/">
+          <Navbar.Brand>Spice Mark Fashions</Navbar.Brand>
+        </LinkContainer>
+        <Navbar.Toggle aria-controls="navbarColor01" />
+        <Navbar.Collapse id="navbarColor01">
+          <Nav className="me-auto">
+            <LinkContainer to="/">
+              <Nav.Link>Home</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/cart">
+              <Nav.Link>Cart</Nav.Link>
+            </LinkContainer>
+            <NavDropdown title="New User?" id="basic-nav-dropdown">
+              <LinkContainer to="/login">
+                <NavDropdown.Item>Login</NavDropdown.Item>
+              </LinkContainer>
+              <LinkContainer to="/signup">
+                <NavDropdown.Item>Signup</NavDropdown.Item>
+              </LinkContainer>
+              <NavDropdown.Divider />
+              <LinkContainer to="/logout">
+                <NavDropdown.Item>Logout</NavDropdown.Item>
+              </LinkContainer>
+            </NavDropdown>
+          </Nav>
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-light">Search</Button>
+          </Form>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
