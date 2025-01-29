@@ -1,14 +1,15 @@
-import React from 'react'
-
-function Navbar() {
+import React from "react";
+import { LinkContainer } from "react-router-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
+function Header() {
   return (
-    <nav className="navbar navbar-expand-lg bg-light" data-bs-theme="light">
+    <nav className="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
   <div className="container-fluid">
-    <a className="navbar-brand" href="#">SpiceMark Fashions</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <a className="navbar-brand" href="#">Spice Mark Fashions</a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
-    <div className="collapse navbar-collapse" id="navbarColor03">
+    <div className="collapse navbar-collapse" id="navbarColor01">
       <ul className="navbar-nav me-auto">
         <li className="nav-item">
           <a className="nav-link active" href="#">Home
@@ -36,13 +37,13 @@ function Navbar() {
         </li>
       </ul>
       <form className="d-flex">
-        <input className="form-control me-sm-2" type="search" placeholder="Search"/>
+        <input className="form-control me-sm-2" type="search" placeholder="Search" />
         <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
   </div>
 </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Header;

@@ -1,22 +1,24 @@
 import React from 'react';
-import {Container} from 'react-bootstrap';
-import Navbar from './components/navbar';
-import Footer from './components/footer';
+import  Header  from './components/Header';
+import  Footer  from './components/footer';
+import { Container } from 'react-bootstrap';
+
+
+
 
 
 export default function App() {
   return (
     <>
     <div>
-
-      <Navbar />
+      < Header />
       <Container>
-        <h1>Spice Mark Fashions</h1>
-
+        <h1>Welcome to the Home</h1>
       </Container>
       <Footer />
+
     </div>
     
     </>
-  )
+  );
 }
