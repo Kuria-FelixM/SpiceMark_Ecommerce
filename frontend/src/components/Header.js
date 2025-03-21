@@ -1,38 +1,45 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { LinkContainer } from 'react-router-bootstrap'
+import {Navbar,Nav} from 'react-bootstrap'
+
 
 function Header() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+      <Navbar className="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
   <div className="container-fluid">
-    <a className="navbar-brand" href="#">SpiceMarkFashions</a>
+    <LinkContainer to="/">
+     <Nav.Link className="navbar-brand">SpiceMarkFashions</Nav.Link>
+    </LinkContainer>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarColor01">
       <ul className="navbar-nav me-auto">
         <li className="nav-item">
-          <a className="nav-link active" href="#">Home
-            <span className="visually-hidden">(current)</span>
-          </a>
+          <LinkContainer to="/">
+            <Nav.Link className="nav-link active">Home</Nav.Link>
+          </LinkContainer>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Features</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Pricing</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">About</a>
+          <LinkContainer to="/cart">
+            <Nav.Link className="nav-link">Cart</Nav.Link>
+          </LinkContainer>
         </li>
         <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+         <LinkContainer to="/signup">
+           <Nav.Link className="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">New User?</Nav.Link>
+         </LinkContainer> 
           <div className="dropdown-menu">
-            <a className="dropdown-item" href="#">Action</a>
-            <a className="dropdown-item" href="#">Another action</a>
-            <a className="dropdown-item" href="#">Something else here</a>
+            <LinkContainer to="/login">
+              <Nav.Link className="dropdown-item">LogIn</Nav.Link>
+            </LinkContainer> 
+            <LinkContainer to="/signup">
+              <Nav.Link className="dropdown-item">SignUp</Nav.Link>
+            </LinkContainer>
             <div className="dropdown-divider"></div>
-            <a className="dropdown-item" href="#">Separated link</a>
+            <a className="dropdown-item" href="#">LogOut</a>
           </div>
         </li>
       </ul>
@@ -42,7 +49,7 @@ function Header() {
       </form>
     </div>
   </div>
-</nav>
+</Navbar>
     </div>
   )
 }
