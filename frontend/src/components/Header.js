@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap'
 import {Navbar,Nav} from 'react-bootstrap'
 
@@ -39,7 +39,9 @@ function Header() {
               <Nav.Link className="dropdown-item">SignUp</Nav.Link>
             </LinkContainer>
             <div className="dropdown-divider"></div>
-            <a className="dropdown-item" href="#">LogOut</a>
+            <LinkContainer to="/logout">
+              <Nav.Link className="dropdown-item">LogOut</Nav.Link>
+            </LinkContainer>
           </div>
         </li>
       </ul>
