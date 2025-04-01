@@ -5,6 +5,8 @@ import HomeScreen from './components/screens/HomeScreen';
 import SignupScreen from './components/screens/SignupScreen';
 import LoginScreen from './components/screens/LoginScreen';
 import CartScreen from './components/screens/CartScreen';
+import ProductScreen from './components/screens/ProductScreen';
+
 
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/" element={<HomeScreen />} />
+        <Route exact path="/product/:id" element={<ProductScreen />} />
       
      
         <Route exact path="/login" element={<LoginScreen />} />

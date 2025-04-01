@@ -19,7 +19,7 @@ function Header() {
       <ul className="navbar-nav me-auto">
         <li className="nav-item">
           <LinkContainer to="/">
-            <Nav.Link className="nav-link active">Home</Nav.Link>
+            <Nav.Link className="nav-link active">Home <i class="fa-solid fa-house-user"></i></Nav.Link>
           </LinkContainer>
         </li>
         <li className="nav-item">
